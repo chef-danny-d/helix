@@ -3,52 +3,73 @@ import {Nav, Navbar, Form, FormControl, NavDropdown} from 'react-bootstrap'
 import styled from 'styled-components'
 import Btn from './Button'
 import { Link } from 'react-router-dom'
+import 'bootstrap/scss/bootstrap.scss'
 
 const NavStyle = styled.div`
-    
+    .search{
+            display: flex;
+            width: 100%;
+        &--input{
+            flex: 3;
+            border-radius: 0;
+        }
+        &--button{
+            flex: 1;
+        }
+    }
+    .navbar-nav{
+      display: flex;
+      align-items: center;
+      a{
+        color: cornflowerblue;
+        padding: 0.25em 0.5em;
+      }
+    }
+    .dropdown{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        &-menu{
+            flex-direction: column;
+            a{
+                display: inline-block;
+                &:active{
+                  background-color: lightgray;
+                }
+            }
+        }
+        &-menu.show{
+          display: flex;
+        }
+    }
 `
 
 const NavigationBar = () => (
     <React.Fragment>
         <NavStyle>
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand>Helix</Navbar.Brand>
-                <Nav className="mr-5">
-                    <Nav.Link>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Navbar.Brand>Helix</Navbar.Brand>
+                    <Nav className="mr-5">
                         <Link to="/upload">Upload</Link>
-                    </Nav.Link>
-                    <Nav.Link>
                         <Link to="/">Files</Link>
-                    </Nav.Link>
-                    <Nav.Link>
                         <Link to="/trash">Trash</Link>
-                    </Nav.Link>
-                    <Nav.Link>
                         <Link to="/shared">Shared</Link>
-                    </Nav.Link>
-                    <NavDropdown title="Account" id="basic-nav-dropdown">
-                        <NavDropdown.Item>
+                        <NavDropdown title="Account" id="basic-nav-dropdown">
                             <Link to="/account">Account Settings</Link>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item>
                             <Link to="/profile">Profile Settings</Link>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item>
                             <Link to="/billing">Billing Settings</Link>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item>
                             <Link to="/privacy">Privacy Settings</Link>
-                        </NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item>
+                            <NavDropdown.Divider />
                             <Link to="/logout">Logout</Link>
-                        </NavDropdown.Item>
-                    </NavDropdown>
-                </Nav>
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Btn variant="primary" big className="button">Search</Btn>
-                </Form>
+                        </NavDropdown>
+                    </Nav>
+                    <Form inline className="search">
+                        <FormControl type="text" placeholder="Search" className="search--input" />
+                        <Btn variant="primary" search className="button">Search</Btn>
+                    </Form>
+                </Navbar.Collapse>
             </Navbar>
         </NavStyle>
     </React.Fragment>

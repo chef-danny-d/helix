@@ -11,6 +11,7 @@ import Profile from './components/pages/Profile'
 import Billing from './components/pages/Billing'
 import Privacy from './components/pages/Privacy'
 import NoMatch from './components/pages/NoMatch'
+import { ThemeProvider } from 'styled-components'
 
 function App() {
     return (
