@@ -12,8 +12,8 @@ const NavigationBar = () => (
     <React.Fragment>
         <NavStyle>
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                <Nav className="mr-auto">
+                <Navbar.Brand>Helix</Navbar.Brand>
+                <Nav className="mr-5">
                     <Nav.Link>
                         <Link to="/upload">Upload</Link>
                     </Nav.Link>
@@ -28,7 +28,7 @@ const NavigationBar = () => (
                     </Nav.Link>
                     <NavDropdown title="Account" id="basic-nav-dropdown">
                         <NavDropdown.Item>
-                            <Link to="/settings">Account Settings</Link>
+                            <Link to="/account">Account Settings</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
                             <Link to="/profile">Profile Settings</Link>
@@ -40,7 +40,9 @@ const NavigationBar = () => (
                             <Link to="/privacy">Privacy Settings</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item>Logout</NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link to="/logout">Logout</Link>
+                        </NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 <Form inline>

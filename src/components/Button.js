@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const ButtonStyle = styled.div`
   .btn{
-      font-size: ${(props) => props.big ? 'initial' : '1.75rem'};
+      //font-size: ${(props) => props.big ? 'initial' : '1.75rem'};
   }
 `
 

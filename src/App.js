@@ -19,8 +19,8 @@ function App() {
                 <Navigation />
                 <Cont>
                     <Switch>
-                        <Route exact path="/upload" component={Upload}/>
-                        <Route path="/" component={Files}/>
+                        <Route path="/upload" component={Upload}/>
+                        <Route exact path="/" component={Files}/>
                         <Route path="/trash" component={Trash}/>
                         <Route path="/shared" component={Shared}/>
                         <Route path="/account" component={Account}/>
